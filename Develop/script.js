@@ -11,57 +11,76 @@ function writePassword() {
 
   passwordText.value = password;
 
-// delete and leave bracket !!! }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 */
-    var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    var characters = ['~','!','@','#','$','%','^','&','*','(',')','_','+','`','[',']','','{','}','|',';',':','"',',','.','/','<','>','?'];  
-var password = [lower + upper + characters];
 
+
+var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var specialCharacters = ['~','!','@','#','$','%','^','&','*','(',')','_','+','`','[',']','','{','}','|',';',':','"',',','.','/','<','>','?'];  
+//var length = ['8','9','10','11','12','13','14','15']
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-let writePassword = function() {
-window.alert("Welcome! Let's create a PassWord.");
-
-var promptLetters = window.prompt("How many characters are needed? Enter any number up to '4-15'");
-var promptCharacters = window.prompt("Need special characters? (ex: %, #, &) Enter 'yes' or 'no'");
-var promptCase= window.prompt("Do you want all upper, lower case or mixed? Enter 'upper','lower' or 'both'");
+var writePassword = function() {
+  window.alert("Welcome! Let's create a PassWord.")
 
 
-console.log(promptLetters);
+//queries begin 
+var promptLength = window.prompt("How many characters are needed? Enter any number between '8' and '128'"); {
+  if (promptLength < 8 || promptLength > 128) {
+    window.alert("Incorrect value. Try again.");
+    window.prompt("Re-enter value between 8-128");
+  }
+  if (promptLength > 7 || promptLength < 129) {
+    window.alert("OK!");
+  }
+}
+
+var promptCharacters = window.prompt("Need special characters? (ex: %, #, &) Enter 'yes' or 'no'"); {
+  if (promptCharacters === "no") {
+    window.alert("Characters make your password stronger. Are you Sure?")
+    window.prompt("Want special characters? Enter 'yes' or 'no'");
+  if (promptCharacters === "yes") 
+    window.alert("Good choice!")
+  }
+
+  else
+  {
+    (promptCharacters === "yes") 
+    window.alert("Good choice!") 
+  }
+}
+
+
+
+console.log(promptLength);
 console.log(promptCharacters);
-console.log(promptCase);
+//console.log(promptCase);
+}
 
 
-if(promptLetters >=4 <=15 === writePassword) {
-  generateBtn = lower + upper;
-}
-}
+
+
+// Add event listener to generate button 
+generateBtn.addEventListener("click", writePassword);
+
+
+
+ 
+
+
+
+
+
+
+
 
 
 
 /*
-let specialCharacters = function() {
-var specialCharacters = window.prompt("Would you like special characters? Enter 'yes' or 'no'");
-console.log(specialCharacters);
-}
-
-
-
-
-
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-}
-
-// Add event listener to generate button */
-generateBtn.addEventListener("click", writePassword);
+*/
