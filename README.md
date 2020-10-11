@@ -1,1 +1,1 @@
-# Code-Generator
+# Password Generator Starter Code
