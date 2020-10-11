@@ -1,24 +1,8 @@
-// Assignment code here
-/*
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-*/
-
+let passwordArr = (lower+upper+characters);
 var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var characters = ['~','!','@','#','$','%','^','&','*','(',')','_','+','`','[',']','','{','}','|',';',':','"',',','.','/','<','>','?'];  
-var length = ['8','9','10','11','12','13','14','15'];
+var length = ['0','1','2','3','4','5','6','7','8','9'];
 
 
 var generateBtn = document.querySelector("#generate");
@@ -29,54 +13,66 @@ var writePassword = function() {
 
 
 //queries begin 
-var promptLength = window.prompt("How many characters are needed? Enter number between '8' and '128'"); {
-  if (promptLength < 8 || promptLength > 128) {
+var confirmLength = window.prompt("How many characters are needed? Enter number between '8' and '128'"); {
+  if (confirmLength < 8 || confirmLength > 128) {
+
     window.alert("Incorrect value. Try again.");
     window.prompt("Re-enter value between 8-128");
   }
-
-  if (promptLength > 7 || promptLength < 129) {
-    window.alert("OK! Your password default is numbers. Let's give you some other choices");
+  if (confirmLength > 7 || confirmLength < 129) {
+    window.alert("OK! Your password defaults to numbers. Let's give you some other choices");
   }
 }
 
-var promptCharacters = window.prompt("Need special characters? (ex: %, #, &) Enter 'yes' or 'no'"); {
-  if (promptCharacters === "no") {
+var confirmCharacters = window.prompt("Need special characters? (ex: %, #, &) Enter 'yes' or 'no'"); {
+  if (confirmCharacters === "no") {
     window.alert("Using characters with numbers and letters makes your password stronger. We won't ask again, but Are You Sure?");
-    window.prompt("Want special characters? Enter 'yes' or 'no'");}
+    window.prompt("Want special characters? Enter 'yes' or 'no'")
+    if (confirmCharacters === "yes") {window.alert("Great!");}
+  } if (confirmCharacters === "no") {window.alert("Thats OK. We'll still create a strong password");}
+}
 
-  else (promptCharacters === "yes"); { window.alert("Good choice!") }
-  }
-
-var promptLower = window.prompt("Want Lower Case letters? Enter 'yes' or 'no'."); {
-    if (promptLower === "yes") {
+var confirmLower = window.prompt("Want Lower Case letters? Enter 'yes' or 'no'."); {
+    if (confirmLower === "yes") {
       window.alert("Great! One more question.");}
-    } 
-    if (promptLower === "no") { window.alert("OK. One more question."); }
+     
+    else (confirmLower === "no"); { 
+      window.alert("OK. One more question."); }
+    }
 
-
-var promptUpper = window.prompt("Use upper case letters also? Enter 'yes' or 'no'"); {
-  if(promptUpper === "yes") {
-    window.alert("Great! Get your pen and paper ready!"); }
-
-    if(promptUpper=== "no") {
-      window.alert("OK! Get your pen and paper ready!");
+var confirmUpper = window.prompt("Use upper case letters also? Enter 'yes' or 'no'"); {
+  if(confirmUpper === "yes") {
+    window.alert("Great! Get your pen and paper ready!") }
+  
+    else (confirmUpper === "no"); {
+      window.alert("OK! Get your pen and paper ready!"); }
     }
   
+console.log(confirmLength);
+console.log(confirmCharacters);
+console.log(confirmLower);
+console.log(confirmUpper);
+
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+// Write password to the #password 
+function writePassword() {
+  var password = generatePassword();
+  console.log(password);
+  var passwordArr = password.split(",");
+  var newPassword = "";
+  for (i=0; i<passwordArr.length; i++) {
+    newPassword = newPassword + passwordArr[i];
+  }
+  
+  var passwordText = document.querySelector("#password");
+  passwordText.value = newPassword;
 }
-
-
-console.log(promptLength);
-console.log(promptCharacters);
-console.log(promptLower);
-console.log(promptUpper);
 }
-
-
-
-
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
+console.log(passwordArr);
 
 /*
 function makeid(length) {
@@ -88,22 +84,4 @@ function makeid(length) {
   }
   return result;
 }
-
-console.log(makeid(5)); 
-BORROWED FROM WEBSITE */
- 
-
-
-
-
-
-
-
-
-
-
-/*
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-*/
+ */
