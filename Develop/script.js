@@ -1,4 +1,4 @@
-let passwordArr = "";
+let passwordArr = lower + upper + characters + numbers;
 var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var characters = ['~','!','@','#','$','%','^','&','*','(',')','_','+','`','[',']','','{','}','|',';',':','"',',','.','/','<','>','?'];  
@@ -11,8 +11,7 @@ var generateBtn = document.querySelector("#generate");
 var writePassword = function() {
   window.alert("Welcome! Let's create a PassWord.")
 
-
-//queries begin 
+// begin 
 var confirmLength = window.prompt("How many characters are needed? Enter number between '8' and '128'"); {
   if (confirmLength < 8 || confirmLength > 128) {
 
@@ -55,50 +54,51 @@ var confirmUpper = window.prompt("Use upper case letters also? Enter 'yes' or 'n
     if (confirmUpper === "no") {
       window.alert("OK! Get your pen and paper ready!"); }
     }
-  
+  //options end
+
 console.log(confirmLength);
 console.log(confirmCharacters);
 console.log(confirmLower);
 console.log(confirmUpper);
 
+if(confirmUpper) {
+  upper = upper.concat(passwordArr);
+}
+
+if(confirmCharacters) {
+  characters = characters.concat(passwordArr);
+}
+
+if(confirmLength) {
+  length = numbers.concat(passwordArr);
+}
+
+if(confirmLower) {
+  lower = lower.concat(password.Arr);
+}
+
+for(var i=0; i<passwordArr; i ++) {
+  var passwordArr=getRandomPw(choices);
+  return result.join()
+}
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password 
 function writePassword() {
-
-  var password = generatePassword();
-  console.log(password);
-  var passwordArr = password.split(",");
-  var newPassword = "";
-  //for (i=0; i<length.length; i++) {
-    //newPassword = newPassword + passwordArr[i];
-  //}
-  
-for(var i = 0; i <= passwordArr; i ++ ) 
-{
-  password=password + passwordArr.chartAt(Math.floor(Math.random() * Math.floor(value.length -1)));
+function generatePassword(){
+ var password = generatePassword();
+console.log(password);
+//var passwordArr = password.split(",");
+var newPassword = "";
+for(var i = 0; i < passwordArr.length; i++) {
+  newPassword = newPassword + passwordArr.chartAt(Math.floor(Math.random()*Math.floor(passwordArr.length -1)));
 }
-
-
-
-  var passwordText = document.querySelector("#password");
+var passwordText = document.querySelector("#password");
   passwordText.value = newPassword;
-}
-}
+}}
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
-console.log(passwordArr);
-document.getElementById("password").passwordArr = password;
-/*
-function makeid(length) {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
- */
