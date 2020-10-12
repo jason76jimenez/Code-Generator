@@ -89,7 +89,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password 
 function writePassword() {
-function generatePassword(){
+
+
+function generatePassword(newPassword){
+  var newPassword= (length+numbers+characters+upper+lower);
+console.log(length+ upper+ lower+ characters + numbers);
+
+
  var password = generatePassword();
 console.log(password);
 //var passwordArr = password.split(",");
@@ -97,8 +103,7 @@ var newPassword = "";
 for(var i = 0; i < passwordArr.length; i++) {
   newPassword = newPassword + passwordArr.chartAt(Math.floor(Math.random()*Math.floor(passwordArr.length -1)));
 }
-var passwordText = document.querySelector("#password");
-  passwordText.value = newPassword;
+var newPassword = document.querySelector("#password");
 }}
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
