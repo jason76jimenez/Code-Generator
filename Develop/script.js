@@ -107,3 +107,4 @@ var newPassword = document.querySelector("#password");
 }}
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
+document.getElementById("#generate");
